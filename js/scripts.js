@@ -24,6 +24,8 @@ pickScissors.addEventListener('click', function() { playerPick('scissors') });
 
 // Game status
 
+pickElem.style.display = 'none';
+
 var gameState = 'notStarted',  //started // ended
     player = {
         name: '',
@@ -125,23 +127,34 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
     if (winnerIs == 'player') {
-        playerResultElem.innerHTML = "Win!";
+        playerResultElem.innerHTML = "<span class='win'>Win !!!</span>";
+        computerResultElem.innerHTML = "<span class='defeat'>Defeat !</span>";
         player.score++;
         setGamePoints();
     } else if (winnerIs == 'computer') {
-        computerResultElem.innerHTML = "Win!";
+        computerResultElem.innerHTML = "<span class='win'>Win !!!</span>";
+        playerResultElem.innerHTML = "<span class='defeat'>Defeat !</span>";
         computer.score++;
         setGamePoints();
     } else {
-        computerResultElem.innerHTML = playerResultElem.innerHTML = "Score draw!";
+        computerResultElem.innerHTML = playerResultElem.innerHTML = "<span class='draw'>Score draw !</span>";
     }
 
     if (player.score == 10) {
-        alert('The winner is the player!');
-        end();
+        pickElem.style.display = 'none';
+        setTimeout(winnerIsPlayer, 100);
+        function winnerIsPlayer() {
+            alert('The winner is the player!');
+            end();
+        };
+        
     } else if (computer.score == 10) {
-        alert('The winner is the computer!');
-        end();
+        pickElem.style.display = 'none';
+        setTimeout(winnerIsComputer, 100);
+        function winnerIsComputer() {
+            alert('The winner is the computer!');
+            end();
+        };
     }
 
 }

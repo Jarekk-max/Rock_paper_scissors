@@ -2,72 +2,69 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Kamień, papier i nożyce</title>
+    <title>Rock, paper, scissors</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
     <div class="container">
-      <h3 class="text-center">
-        Welcome to the game
-        <span class="label label-default">Rock</span>
-        <span class="label label-info">Paper</span>
-        <span class="label label-danger">Scissors</span>
-      </h3>
+        <div class="image-box">
+          <img src="images/game.png" class="logo" alt="Rock, paper, scissors" />
+        </div>
     </div>
 
     <div id="js-newGameElement" class="container">
       <div class="row text-center">
-        <button  id="js-newGameButton" class="btn btn-default">New game</button>
+        <button  id="js-newGameButton" class="new-btn">New game</button>
       </div>
     </div>
 
     <div id="js-playerPickElement" class="container">
       <div class="row text-center">
-        <button id="js-playerPick_rock" class="btn">
-          <span class="badge">
-            <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
-          </span>
-          Rock
+        <button id="js-playerPick_rock" class="btn-rock">
+          <div class="rock-box">
+            <img src="images/rock.png" class="rock" alt="rock" />
+          </div>
         </button>
-        <button id="js-playerPick_paper"  class="btn">
-          <span class="badge">
-          <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
-          </span>
-          Paper
+        <button id="js-playerPick_paper"  class="btn-paper">
+          <div class="paper-box">
+            <img src="images/paper.png" class="paper" alt="paper" />
+          </div>
         </button>
-        <button id="js-playerPick_scissors"  class="btn">
-          <span class="badge">
-          <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
-          </span>
-          Scissors
+        <button id="js-playerPick_scissors"  class="btn-scissors">
+          <div class="scissors-box">
+            <img src="images/scissors.png" class="scissors" alt="scissors" />
+          </div>
         </button>
       </div>
     </div>
 
     <div id="js-resultsTableElement" class="container">
-      <div class="row">
+      <div class="row row_one">
         <div class="col-xs-5 text-center">
-          <span id="js-playerPoints" class="badge">
-          0
-          </span>
           <span id="js-playerName">
           Player Name
           </span>
+          <div>
+            <span id="js-playerPoints" class="badge">
+            0
+            </span>  
+          </div>
         </div>
         <div class="col-xs-2 text-center">
           VS.
         </div>
         <div class="col-xs-5 text-center">
-          <span id="js-computerPoints" class="badge">
-          0
-          </span>
           Computer
+          <div>
+            <span id="js-computerPoints" class="badge">
+            0
+            </span>
+          </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row row_one">
         <div class="col-xs-5 text-center">
           <span id="js-playerPick">Player selection</span>
         </div>
@@ -76,7 +73,7 @@
           <span id="js-computerPick">Computer selection</span>
         </div>
       </div>
-      <div class="row">
+      <div class="row row_one">
         <div class="col-xs-5 text-center">
           <span id="js-playerResult">Player Score</span>
         </div>
