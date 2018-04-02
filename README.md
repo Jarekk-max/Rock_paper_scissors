@@ -12,4 +12,5 @@ Rozwiązania, tchnologie i narzędzia:
 - JavaScript;
 - Sass;
 - Bootstrap 3;
+- RWD
 - npm (task runner).
